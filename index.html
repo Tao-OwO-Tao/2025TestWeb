@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>On The Trail - Travel Blog</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-height: 60vh;
+      overflow: hidden;
+      background: black;
+    }
+
+    .carousel-container img {
+      display: none;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background: black;
+    }
+
+    .carousel-container img.active {
+      display: block;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 0 12px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+
+    .posts {
+      margin: 60px 20px 20px 20px;
+    }
+    .posts h2 {
+      margin-bottom: 20px;
+    }
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .post {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      background: #b58c5d;
+      color: white;
+      padding: 40px 0;
+      font-size: 1.2rem;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .instagram-gallery {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    footer {
+      background: #2d3a30;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-left ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+    .footer-left ul li {
+      margin: 5px 0;
+    }
+    .footer-right input,
+    .footer-right button {
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 4px;
+      border: none;
+    }
+    .footer-right button {
+      background-color: #b58c5d;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<section class="carousel-container" id="carousel">
+  <img src="9.jpg" alt="盆菜" class="active">
+  <img src="10.jpg" alt="越南煎餅">
+  <img src="11.jpg" alt="關東煮">
+  <img src="12.jpg" alt="米線">
+  <button class="carousel-button prev" onclick="prevSlide()">❮</button>
+  <button class="carousel-button next" onclick="nextSlide()">❯</button>
+</section>
+
+<section class="posts">
+  <h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TAO 的 美食部落格&nbsp;</h2>
+  <div class="post-grid">
+    <div class="post">完全不同的風味料理!&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+      <h1>&nbsp;</h1>
+    </div>
+    <div class="post">來自各國的的料理</div>
+    <div class="post">韓式、日式、台式各種應有盡有</div>
+    <div class="post">只有你想不到的</div>
+    <div class="post">沒有我們沒有的</div>
+    <div class="post">*\ʕ•ﻌ•ʔ/*</div>
+  </div>
+</section>
+
+<section class="stats">
+  <div>98<br/>Countries Visited</div>
+  <div>7<br/>Continents Visited</div>
+  <div>8<br/>Torn Pairs of Shoes</div>
+  <div>2<br/>Lost Backpacks</div>
+</section>
+
+<section class="instagram-gallery">
+  <h3>在 Instagram 上追蹤我&nbsp;</h3>
+  <div class="gallery">
+    <img alt="美食圖片 1" src="1.jpg"/>
+    <img alt="美食圖片 2" src="2.jpg"/>
+    <img alt="美食圖片 3" src="3.jpg"/>
+    <img alt="美食圖片 4" src="4.jpg"/>
+    <img alt="美食圖片 5" src="5.jpg"/>
+    <img alt="美食圖片 6" src="6.jpg"/>
+    <img alt="美食圖片 7" src="7.jpg"/>
+    <img alt="美食圖片 8" src="8.jpg"/>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <h4>On The Trail<br/><small>My Travel Blog</small></h4>
+    <ul>
+      <li>Home</li>
+      <li>About Me</li>
+      <li>Work With Me</li>
+      <li>Instagram</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+  <div class="footer-right">
+    <p>Subscribe here and get the latest travel tips and my insider secrets!</p>
+    <input placeholder="Email" type="email"/>
+    <label><input type="checkbox"/> Yes, subscribe me to your newsletter</label>
+    <button>Subscribe</button>
+  </div>
+</footer>
+
+<script>
+  const images = document.querySelectorAll('#carousel img');
+  let current = 0;
+
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+  }
+
+  function prevSlide() {
+    current = (current - 1 + images.length) % images.length;
+    showImage(current);
+  }
+
+  function nextSlide() {
+    current = (current + 1) % images.length;
+    showImage(current);
+  }
+</script>
+
+</body>
+</html>
